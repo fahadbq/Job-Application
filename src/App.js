@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link, Route } from 'react-router-dom'
 import axios from 'axios'
-import FormContainer from './FormContainer'
-import DashboardContainer from './DashboardContainer'
+import FormContainer from './components/FormContainer'
+import DashboardContainer from './components/DashboardContainer'
 import Home from './Home'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
