@@ -3,7 +3,6 @@ import { Link, Route } from 'react-router-dom'
 import axios from 'axios'
 import FormContainer from './components/FormContainer'
 import DashboardContainer from './components/DashboardContainer'
-import Home from './Home'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const App = (props) =>{
@@ -26,14 +25,13 @@ const App = (props) =>{
     }
 
     return (
-        <div className='container'>
-            <h4> <Link to='/' > Home </Link> | <Link to='/dashboard' > Dashboard </Link> | <Link to='/form' > Form </Link> </h4> <br />
+        <div className='container' style={{ marginTop: "10px" }} >
+            <h4> <Link to='/dashboard' > Dashboard </Link> | <Link to='/' > Form </Link> </h4> <br />
 
-            <Route path='/' component={Home} exact={true} />
             <Route path='/dashboard' render={ (props) =>{
                 return < DashboardContainer jobType={jobType} users={users} {...props} />
-            }}/>
-            <Route path='/form' render={ (props) =>{
+            }} />
+            <Route path='/' exact render={ (props) =>{
                 return <FormContainer jobType={jobType} addFormData={addFormData} {...props} />
             } } />
         </div>
